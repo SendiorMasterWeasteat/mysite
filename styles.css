@@ -1,0 +1,385 @@
+/* Загальний стиль для секції */
+.hero {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Висота на весь екран */
+    background: linear-gradient(135deg, #d8bc69, #f7f1e1);
+
+
+
+
+
+
+    width: 100%; /* Задаємо 100% ширину */
+    overflow: hidden; /* Щоб зображення не виходило за межі контейнера */
+}
+
+/* Стиль для контейнера, що містить зображення */
+.hero .container {
+    position: relative;
+    width: 80%; /* Зменшуємо розмір зображення */
+    height: 80%; /* Зменшуємо висоту контейнера */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Запобігає виходу зображення за межі контейнера */
+    margin-top: 50px; /* Відступ від верхньої частини */
+    border-radius: 20px;
+}
+
+/* Стиль для зображення */
+.hero img {
+    width: 100%; /* Зображення розтягується на всю ширину контейнера */
+    height: 100%; /* Зображення розтягується на всю висоту контейнера */
+    object-fit: cover; /* Заповнює контейнер без спотворень */
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px; /* Закруглені краї за замовчуванням */
+    transition: transform 0.3s ease-in-out; /* Додаємо плавну анімацію для масштабування */
+    overflow: hidden;
+}
+
+/* Ефект збільшення при наведенні */
+.hero img:hover {
+    transform: scale(1.05); /* Збільшуємо зображення на 5% */
+    border-radius: 20px;
+}
+
+/* Стиль для текстового накладу */
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Центруємо текст */
+    text-align: center;
+    color: #fff;
+    z-index: 1; /* Забезпечує, що текст знаходиться поверх зображення */
+}
+
+/* Стиль для контейнера з кнопкою */
+.button-container {
+    position: absolute;
+    top: 60%; /* Трохи нижче центру для кнопки */
+    left: 50%;
+    transform: translateX(-50%); /* Центруємо по горизонталі */
+    z-index: 2; /* Забезпечує, що кнопка знаходиться поверх зображення */
+}
+
+/* Стиль для кнопки */
+.catalog-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #ff6347; /* Приклад кольору кнопки */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.catalog-button:hover {
+    background-color: #e55347; /* Приклад ефекту при наведенні */
+}
+
+/* Медіа-запити для мобільних пристроїв */
+@media (max-width: 768px) {
+    .hero .container {
+        width: 95%; /* Збільшуємо ширину контейнера на мобільних пристроях */
+        height: 70%; /* Зменшуємо висоту контейнера */
+        margin-top: 20px; /* Зменшуємо відступ від верхньої частини */
+    }
+
+    .catalog-button {
+        padding: 8px 16px; /* Зменшуємо розмір кнопки */
+        font-size: 14px; /* Зменшуємо шрифт */
+    }
+}
+
+/* Медіа-запити для екранів 1440px і вище */
+@media (min-width: 1440px) {
+    .catalog-button {
+        padding: 12px 24px; /* Збільшуємо розмір кнопки */
+        font-size: 18px; /* Збільшуємо шрифт */
+    }
+
+    .text-overlay {
+        font-size: 24px; /* Збільшуємо розмір тексту */
+    }
+}
+
+/* Медіа-запити для екранів 425px і менше */
+@media (max-width: 425px) {
+    .hero .container {
+        width: 100%; /* Збільшуємо ширину контейнера */
+        height: 400px; /* Встановлюємо висоту контейнера */
+        margin-top: -200px; /* Зменшуємо відступ від верхньої частини */
+    }
+
+    .hero img {
+        width: 400px; /* Встановлюємо ширину зображення */
+        height: 400px; /* Встановлюємо висоту зображення */
+        object-fit: cover; /* Заповнює контейнер без спотворень */
+    }
+
+    .button-container {
+        top: 50%; /* Переміщуємо кнопку нижче */
+    }
+}
+
+
+/* Загальні стилі каруселі */
+.carousel-item img {
+    filter: brightness(80%);
+    transition: filter 0.5s ease;
+}
+
+.carousel-item img:hover {
+    filter: brightness(100%);
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.carousel-indicators li {
+    background-color: #fff;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: #fff;
+}
+
+/* Стилі для екранів шириною 768px і менше */
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 18px;
+    }
+
+    .carousel-caption p {
+        font-size: 12px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        padding: 5px;
+    }
+}
+
+/* Стилі для екранів шириною 480px і менше */
+@media (max-width: 480px) {
+    .carousel-caption {
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 16px;
+    }
+
+    .carousel-caption p {
+        font-size: 10px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        padding: 3px;
+    }
+}
+
+.carousel-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item {
+    flex: 0 0 auto; /* Фіксований розмір */
+    max-width: 30%; /* Адаптивна ширина елементів */
+    margin: 0 5px; /* Відступи між елементами */
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.carousel-indicators li {
+    background-color: #fff;
+    margin: 0 5px;
+}
+
+
+/* Загальні стилі каруселі */
+.carousel-item img {
+    filter: brightness(80%);
+    transition: filter 0.5s ease;
+}
+
+.carousel-item img:hover {
+    filter: brightness(100%);
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.carousel-indicators li {
+    background-color: #b90000;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: #ade01f;
+}
+
+/* Стилі для екранів шириною 768px і менше */
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 18px;
+    }
+
+    .carousel-caption p {
+        font-size: 12px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        padding: 5px;
+    }
+
+    .carousel-item {
+        max-width: 90%;
+    }
+}
+
+/* Стилі для екранів шириною 480px і менше */
+@media (max-width: 480px) {
+    .carousel-caption {
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 16px;
+    }
+
+    .carousel-caption p {
+        font-size: 10px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        padding: 3px;
+    }
+
+    .carousel-item {
+        max-width: 95%;
+    }
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000;
+    border-radius: 50%;
+    padding: 20px; /* Збільшуємо розмір стрілок */
+    width: 50px;
+    height: 50px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: -60px; /* Розміщуємо стрілки над каруселлю */
+    width: 50px;
+    height: 50px;
+}
+
+.carousel-control-prev {
+    left: 50%;
+    transform: translateX(-100%);
+}
+
+.carousel-control-next {
+    right: 50%;
+    transform: translateX(100%);
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: #fff;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #d3b161; /* Основний колір для стрілок */
+    border-radius: 50%;
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: #b78f4d; /* Змінюємо колір при наведенні */
+}
+
+/* Стилі для стрілок */
+.carousel-control-prev-icon:after,
+.carousel-control-next-icon:after {
+    content: '';
+    display: inline-block;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    width: 12px;
+    height: 12px;
+    transform: rotate(45deg);
+}
+
+.carousel-control-prev-icon:after {
+    transform: rotate(225deg); /* Стрілка вліво */
+    margin-right: 3px;
+}
+
+.carousel-control-next-icon:after {
+    transform: rotate(45deg); /* Стрілка вправо */
+    margin-left: 3px;
+}
+
